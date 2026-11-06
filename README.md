@@ -4,6 +4,10 @@ Send an image from one device to another with a hand gesture. Pick an image, mak
 
 Gesture detection runs entirely in the browser using a Teachable Machine model, so no video ever leaves your device. Only the selected image is uploaded when a grab is detected.
 
+**Live demo:** https://air-grab.netlify.app
+
+> **Note:** the backend runs on Render's free tier and goes to sleep after a period of inactivity. The first request after that can take 30 to 60 seconds, so your first grab or drop may fail or hang. Open https://air-grab.onrender.com/health first to wake it up, then try again.
+
 ## How it works
 
 1. The user opens the **Home** page and selects an image.
@@ -128,7 +132,7 @@ Triggers require a confidence above `0.7` and have a 10 second cooldown to preve
 - **In-memory state.** The friend map and image cache are JavaScript `Map`s, so they reset when the server restarts.
 - **Public uploads.** Files in `/uploads` are served statically, so anyone with the exact URL can view them.
 - **Ephemeral storage.** Free hosting tiers often wipe the disk on restart, so uploaded files may disappear.
-- **Cold starts.** Free tiers can sleep after inactivity, so the first request may take 30 to 60 seconds.
+- **Cold starts.** The free-tier backend sleeps when idle, so the first request after a quiet period is slow.
 - **Single-frame classification.** The model classifies static poses and can be sensitive to lighting and background. Train with varied samples for better accuracy.
 
   ## License
