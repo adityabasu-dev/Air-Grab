@@ -17,7 +17,7 @@ app.use(cors({
       "http://localhost:3000",
       "http://localhost:5000",
       "https://localhost:5173",
-      "https://air-grab.netlify.app/"
+      "https://air-grab.netlify.app"
     ]
     if (!origin || allowed.indexOf(origin) !== -1) {
       callback(null, true);
