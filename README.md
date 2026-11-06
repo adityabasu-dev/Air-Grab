@@ -131,13 +131,6 @@ Triggers require a confidence above `0.7` and have a 10 second cooldown to preve
 - **Cold starts.** Free tiers can sleep after inactivity, so the first request may take 30 to 60 seconds.
 - **Single-frame classification.** The model classifies static poses and can be sensitive to lighting and background. Train with varied samples for better accuracy.
 
-## Roadmap
+  ## License
 
-- [ ] Server-assigned user IDs and session tokens
-- [ ] Friend request and accept flow (session-based, ephemeral friendships)
-- [ ] Real-time delivery with Socket.IO
-- [ ] Upload size limit and image-type validation
-- [ ] Delete files after delivery and on expiry
-- [ ] Switch to hand landmark detection (MediaPipe) for more robust gestures
-- [ ] Redis for shared state across multiple server instances
-
+  MIT. See [LICENSE](LICENSE) for details.
