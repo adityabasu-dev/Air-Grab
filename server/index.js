@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use(cors({
   origin: function (origin, callback) {
     const allowed=[
@@ -110,6 +110,6 @@ app.get("/health", (req, res) => {
     res.json({ status: "Server is healthy" });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(port, "0.0.0.0", () => {
+    console.log(`Server is running on port ${port}`);
 });
